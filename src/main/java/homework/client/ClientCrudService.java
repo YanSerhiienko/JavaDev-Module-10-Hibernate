@@ -5,11 +5,13 @@ import org.hibernate.Session;
 import org.hibernate.Transaction;
 import org.hibernate.query.Query;
 
-import java.sql.SQLException;
 import java.util.List;
 
 public class ClientCrudService {
     public long create(Client client) {
+        if (client == null) {
+            return -1;
+        }
         Session session = HibernateUtil.getINSTANCE().getSessionFactory().openSession();
         Transaction transaction = session.beginTransaction();
         session.persist(client);
@@ -18,7 +20,7 @@ public class ClientCrudService {
         return client.getId();
     }
 
-    public Client getById(long id) throws SQLException {
+    public Client getById(long id) {
         try (Session session = HibernateUtil.getINSTANCE().getSessionFactory().openSession()) {
             Query<Client> query = session.createQuery("from Client where id = :id", Client.class);
             query.setParameter("id", id);
@@ -45,11 +47,15 @@ public class ClientCrudService {
         }
     }
 
-    public void delete(Client client) {
+    public long delete(Client client) {
+        if (client == null) {
+            return -1;
+        }
         try (Session session = HibernateUtil.getINSTANCE().getSessionFactory().openSession()) {
             Transaction transaction = session.beginTransaction();
             session.remove(client);
             transaction.commit();
+            return client.getId();
         }
     }
 
