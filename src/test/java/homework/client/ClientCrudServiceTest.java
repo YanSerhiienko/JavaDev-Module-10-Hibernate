@@ -1,5 +1,7 @@
 package homework.client;
 
+import homework.entity.Client;
+import homework.services.ClientCrudService;
 import homework.utils.DatabaseUtil;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
@@ -8,8 +10,6 @@ import org.junit.jupiter.api.Test;
 import java.sql.SQLException;
 import java.util.Arrays;
 import java.util.List;
-
-import static org.junit.jupiter.api.Assertions.*;
 
 class ClientCrudServiceTest {
     private ClientCrudService service;

@@ -1,4 +1,4 @@
-package homework.client;
+package homework.entity;
 
 import jakarta.persistence.*;
 import lombok.Data;

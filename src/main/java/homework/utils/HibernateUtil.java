@@ -1,8 +1,8 @@
 package homework.utils;
 
-import homework.client.Client;
-import homework.planet.Planet;
-import homework.ticket.Ticket;
+import homework.entity.Client;
+import homework.entity.Planet;
+import homework.entity.Ticket;
 import lombok.Getter;
 import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;
@@ -25,7 +25,7 @@ public class HibernateUtil {
                 .buildSessionFactory();
     }
 
-    public static HibernateUtil getINSTANCE() {
+    public static HibernateUtil getInstance() {
         return INSTANCE;
     }
 

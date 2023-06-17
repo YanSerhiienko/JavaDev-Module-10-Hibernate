@@ -1,7 +1,5 @@
-package homework.ticket;
+package homework.entity;
 
-import homework.client.Client;
-import homework.planet.Planet;
 import jakarta.persistence.*;
 import lombok.Data;
 
@@ -15,7 +13,6 @@ public class Ticket {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
 
-    @Temporal(TemporalType.TIMESTAMP)
     @Column(name = "created_at", insertable = false, updatable = false)
     private Date createdAt;
 

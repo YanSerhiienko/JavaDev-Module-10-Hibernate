@@ -25,3 +25,8 @@ replay_pid*
 /.gradle/
 /.idea/
 /build/
+/homework_files/
+/gradlew
+/gradlew.bat
+/settings.gradle
+
